@@ -2,6 +2,8 @@
 
 Este projeto é um assistente de IA especializado em desenvolvimento TypeScript Fullstack, construído com [Next.js](https://nextjs.org) e integrado ao [Ollama](https://ollama.ai) para processamento local de linguagem natural.
 
+![Preview da Interface](./public/screenshot.png)
+
 ## 🚀 Funcionalidades
 
 - **Chat Interativo**: Interface amigável para conversar com o agente.
@@ -56,11 +58,31 @@ Antes de rodar o projeto, você precisa configurar o ambiente:
 
 ## 🔧 Estrutura do Projeto
 
-- `app/page.tsx`: Interface principal do chat.
-- `app/api/prompt/route.ts`: API Route que proxia as requisições para o Ollama.
-- `services/ollama.ts`: Lógica de comunicação com o servidor Ollama local (porta 11434).
-- `lib/validators.ts`: (Se houver) Validações e utilitários.
+```
+app/
+ ├── page.tsx              # Interface principal do chat
+ ├── layout.tsx            # Layout raiz da aplicação
+ ├── globals.css           # Estilos globais (TailwindCSS)
+ └── api/
+     └── prompt/
+         └── route.ts      # Proxy API para o Ollama
+services/
+ └── ollama.ts             # Comunicação com o servidor Ollama
+lib/
+ └── validators.ts         # Validações e utilitários
+public/                    # Arquivos estáticos
+```
 
 ## 🤝 Contribuição
 
 Sinta-se à vontade para abrir issues ou enviar PRs para melhorar este agente!
+
+
+## Autor
+
+Desenvolvido por Chagas Barros
+
+- [LinkedIn](https://www.linkedin.com/in/chagasbarros)
+- [Portifólio](https://www.chagasbarros.com.br)
+
+
