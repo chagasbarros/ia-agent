@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mentor TypeScript - Agente Fullstack
 
-## Getting Started
+Este projeto é um assistente de IA especializado em desenvolvimento TypeScript Fullstack, construído com [Next.js](https://nextjs.org) e integrado ao [Ollama](https://ollama.ai) para processamento local de linguagem natural.
 
-First, run the development server:
+## 🚀 Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Chat Interativo**: Interface amigável para conversar com o agente.
+- **Respostas em Streaming**: Visualização das respostas token por token em tempo real.
+- **Especialista em TS**: O agente é configurado para auxiliar em TypeScript, Node.js, React, testes e arquitetura.
+- **Sugestões Rápidas**: Exemplos de prompts prontos para testar as capacidades do agente.
+- **Design Moderno**: Interface limpa e responsiva estilizada com TailwindCSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: [Next.js 16](https://nextjs.org) (App Router), React 19.
+- **Estilização**: [TailwindCSS v4](https://tailwindcss.com).
+- **IA / LLM**: [Ollama](https://ollama.ai) (Local LLM Server).
+- **Linguagem**: TypeScript.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📋 Pré-requisitos
 
-## Learn More
+Antes de rodar o projeto, você precisa configurar o ambiente:
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Node.js**: Certifique-se de ter o Node.js instalado (versão 20 ou superior recomendada).
+2.  **Ollama**: Instale o [Ollama](https://ollama.ai/download) em sua máquina.
+3.  **Modelo LLM**: O projeto está configurado para usar o modelo `deepseek-coder:6.7b`. Você precisa baixá-lo via Ollama:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    ollama pull deepseek-coder:6.7b
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    > **Nota**: Se desejar usar outro modelo, altere a string `"model"` no arquivo `services/ollama.ts`.
 
-## Deploy on Vercel
+## 📦 Instalação e Uso
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  Clone o repositório e entre na pasta:
+    ```bash
+    cd agent-ts
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  Instale as dependências:
+    ```bash
+    npm install
+    # ou
+    yarn install
+    # ou
+    pnpm install
+    ```
+
+3.  Inicie o servidor de desenvolvimento:
+    ```bash
+    npm run dev
+    ```
+
+4.  Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+## 🔧 Estrutura do Projeto
+
+- `app/page.tsx`: Interface principal do chat.
+- `app/api/prompt/route.ts`: API Route que proxia as requisições para o Ollama.
+- `services/ollama.ts`: Lógica de comunicação com o servidor Ollama local (porta 11434).
+- `lib/validators.ts`: (Se houver) Validações e utilitários.
+
+## 🤝 Contribuição
+
+Sinta-se à vontade para abrir issues ou enviar PRs para melhorar este agente!
